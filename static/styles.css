@@ -1,0 +1,449 @@
+/* ===== Tema claro, minimal, Ecolite ===== */
+:root {
+  --eco-green: #00a651;
+  --eco-green-dark: #00803c;
+  --eco-yellow: #fcd116;
+  --bg-soft: #f5f7fb;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-soft: #e5e7eb;
+  --card-bg: #ffffff;
+}
+
+/* ===== Reset básico ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg-soft);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 4rem 1.5rem 3rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 880px;
+  background: var(--card-bg);
+  border-radius: 1.75rem;
+  padding: 2.3rem 2.2rem 2.4rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(0, 166, 81, 0.05);
+  border: 1px solid rgba(0, 166, 81, 0.45);
+  color: var(--eco-green-dark);
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 2.7rem);
+  margin-bottom: 0.7rem;
+  color: var(--text-main);
+}
+
+.hero p {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0.25rem auto 1.8rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.7rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--eco-green), var(--eco-yellow));
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 14px 32px rgba(0, 166, 81, 0.35);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+  border: none;
+}
+
+.hero-cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 18px 46px rgba(0, 166, 81, 0.45);
+}
+
+/* ===== Sección podio ===== */
+.podium-section {
+  max-width: 1120px;
+  margin: 0 auto 3.5rem;
+  padding: 0 1.5rem 3rem;
+}
+
+.podium-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.8rem;
+}
+
+.podium-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+}
+
+.podium-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.current-year-badge {
+  padding: 0.6rem 1rem;
+  border-radius: 0.9rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  text-align: right;
+  min-width: 130px;
+}
+
+.current-year-badge span {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.current-year-badge strong {
+  font-size: 1.15rem;
+  color: var(--eco-green-dark);
+}
+
+/* ===== Reel / Carrusel ===== */
+.podium-reel {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.7rem;
+}
+
+.reel-window {
+  overflow: hidden;
+  flex: 1;
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-soft);
+  background: var(--card-bg);
+}
+
+.reel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: transform;
+}
+
+.year-slide {
+  min-width: 100%;
+  padding: 1.9rem 1.7rem 2.1rem;
+}
+
+/* Subheader de cada año */
+.year-slide-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.year-slide-header h3 {
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+
+.year-slide-header p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ===== Layout del podio (tarjetas) ===== */
+.podium-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Tarjeta base */
+.podium-card {
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 1.1rem;
+  border: 1px solid var(--border-soft);
+  padding: 1.1rem 1rem 1.1rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+}
+
+/* Ligero efecto escalón: el 1º un poco más “arriba” */
+.podium-card--place-1 {
+  transform: translateY(-6px);
+  border-color: rgba(0, 166, 81, 0.4);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+}
+
+.podium-card--place-1:hover {
+  transform: translateY(-8px);
+}
+
+.podium-card--place-2,
+.podium-card--place-3 {
+  transform: translateY(0);
+}
+
+.podium-card:hover {
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.09);
+}
+
+/* Cabecera de la tarjeta: número + tag */
+.podium-card-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+/* Badge del puesto (#1, #2, #3) como medalla, arriba de la foto */
+.place-badge {
+  min-width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: #f3f4f6;
+  color: var(--text-main);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+
+/* Oro (1er lugar) */
+.podium-card--place-1 .place-badge {
+  background: linear-gradient(135deg, #fcd116, #ffe58f);
+  color: #7c3e02;
+  border-color: rgba(250, 204, 21, 0.9);
+}
+
+/* Plata (2do lugar) */
+.podium-card--place-2 .place-badge {
+  background: linear-gradient(135deg, #e5e7eb, #f9fafb);
+  color: #374151;
+  border-color: rgba(156, 163, 175, 0.9);
+}
+
+/* Bronce (3er lugar) */
+.podium-card--place-3 .place-badge {
+  background: linear-gradient(135deg, #f97316, #fed7aa);
+  color: #7c2d12;
+  border-color: rgba(248, 153, 80, 0.9);
+}
+
+
+/* Tag de rol (Campeón del año, etc.) */
+.podium-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.18rem 0.7rem;
+  border-radius: 999px;
+  background: #f9fafb;
+  color: var(--text-muted);
+}
+
+/* Avatar */
+.podium-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid #ffffff;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.15);
+  background: #ffffff;
+}
+
+.podium-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Nombre y meta */
+.podium-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: center;
+}
+
+.podium-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ===== Botones navegación ===== */
+.nav-btn {
+  border: none;
+  background: var(--card-bg);
+  color: var(--eco-green-dark);
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.15);
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #f9fafb;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+}
+
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* ===== Timeline de años ===== */
+.timeline-label {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+}
+
+.timeline-label span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+}
+
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.timeline-year {
+  border-radius: 999px;
+  padding: 0.42rem 1rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--border-soft);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.timeline-year:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+.timeline-year.active {
+  background: linear-gradient(135deg, var(--eco-green), var(--eco-yellow));
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 1.8rem 1rem 2.5rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .podium-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .year-slide {
+    padding: 1.6rem 1.3rem 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .podium-reel {
+    gap: 0.3rem;
+  }
+
+  .nav-btn {
+    display: none; /* en móvil se navega más con la timeline */
+  }
+
+  .podium-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .podium-card--place-1 {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding-top: 3.2rem;
+  }
+
+  .hero-inner {
+    padding: 1.9rem 1.5rem 2.2rem;
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ranking de Vendedores 2019–2025 | Top por año</title>
+
+  <meta name="description" content="Resumen claro y profesional del ranking de los mejores vendedores por año, con un podio interactivo para visualizar quién lideró las ventas entre 2019 y 2025.">
+  <meta name="robots" content="index, follow" />
+
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">Ranking de vendedores · 2019–2025</span>
+      <h1>Top de vendedores por año</h1>
+      <p>
+        Este resumen reconoce el desempeño de las personas que han liderado las ventas en los últimos años.
+        Revisa el podio anual y compara cómo han evolucionado los mejores resultados comerciales.
+      </p>
+      <a href="#podium-section" class="hero-cta">Ver ranking anual</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="podium-section" class="podium-section">
+      <div class="podium-header">
+        <div>
+          <h2>Histórico de ganadores</h2>
+          <p>Podio de los mejores vendedores por valor Neto, agrupado por año.</p>
+        </div>
+        <div class="current-year-badge">
+          <span>Año seleccionado</span>
+          <strong id="current-year">2025</strong>
+        </div>
+      </div>
+
+      <div class="podium-reel">
+        <button class="nav-btn" id="btn-prev" aria-label="Año anterior">‹</button>
+
+        <div class="reel-window">
+          <div class="reel-track" id="reel-track">
+            <!-- Las diapositivas se generan con script.js -->
+          </div>
+        </div>
+
+        <button class="nav-btn" id="btn-next" aria-label="Siguiente año">›</button>
+      </div>
+
+      <div class="timeline-label">
+        <span>Explorar por año</span>
+      </div>
+
+      <div class="timeline" id="year-timeline">
+        <!-- Botones de años generados por script.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="footer-year"></span> Ranking de vendedores</p>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
