@@ -179,9 +179,9 @@ const btnPrev = document.getElementById("btn-prev");
 const btnNext = document.getElementById("btn-next");
 const footerYearEl = document.getElementById("footer-year");
 
-let currentIndex = PODIUM_YEARS.length - 1; // último año por defecto
+let currentIndex = PODIUM_YEARS.length - 1;
 let autoTimer = null;
-const AUTO_INTERVAL = 7000; // ms
+const AUTO_INTERVAL = 13000;
 
 function buildSlides() {
   PODIUM_YEARS.forEach(({ year, winners }) => {
@@ -207,7 +207,6 @@ function buildSlides() {
     const grid = document.createElement("div");
     grid.className = "podium-grid";
 
-    // Orden visual 2º - 1º - 3º para que el 1 quede al centro más alto
     const layoutOrder = [2, 1, 3];
 
     layoutOrder.forEach(placeNum => {
